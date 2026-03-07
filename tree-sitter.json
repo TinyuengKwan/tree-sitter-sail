@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "sail",
+      "camelcase": "Sail",
+      "scope": "source.sail",
+      "path": "grammars/sail",
+      "file-types": [
+        "sail"
+      ],
+      "injection-regex": "^sail$",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter for the Sail instruction-set semantics specification language.",
+    "authors": [
+      {
+        "name": "Tinyueng Kwan",
+        "email": "kwantinyueng@gmail.com",
+        "url": "https://github.com/TinyuengKwan"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/GZGavinZhao/tree-sitter-sail"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "tree-sitter-sail",
+  "version": "0.1.0",
+  "description": "Tree-sitter for the Sail instruction-set semantics specification language.",
+  "repository": "https://github.com/TinyuengKwan/tree-sitter-sail",
+  "license": "MIT",
+  "author": {
+    "name": "Tinyueng Kwan",
+    "email": "kwantinyueng@gmail.com",
+    "url": "https://github.com/TinyuengKwan"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "sail"
+  ],
+  "files": [
+    "grammars/sail/grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "grammars/sail/src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.2.1",
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter-cli": "^0.25.6"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.1"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "generate": "cd grammars/sail && tree-sitter generate",
+    "prestart": "tree-sitter build grammars/sail --wasm -o grammars/sail/tree-sitter-sail.wasm",
+    "start": "tree-sitter playground --grammar-path grammars/sail",
+    "test": "node --test bindings/node/*_test.js"
+  }
+}
