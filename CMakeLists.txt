@@ -59,7 +59,8 @@ macro(add_parser name)
             LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
 endmacro()
 
-add_subdirectory(grammars/sail tree-sitter-sail)
+set(PROJECT_DESCRIPTION "Tree-sitter for the Sail instruction-set semantics specification language.")
+add_parser(sail)
 
 file(GLOB QUERIES queries/*.scm)
 install(FILES ${QUERIES}

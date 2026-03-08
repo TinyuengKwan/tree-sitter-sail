@@ -7,7 +7,7 @@ HOMEPAGE_URL := https://github.com/TinyuengKwan/tree-sitter-sail
 VERSION := 0.1.0
 
 # repository
-GRAMMAR_DIR := grammars/sail
+GRAMMAR_DIR := .
 SRC_DIR := $(GRAMMAR_DIR)/src
 
 TS ?= tree-sitter

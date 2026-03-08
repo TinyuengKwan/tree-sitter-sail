@@ -1,0 +1,113 @@
+==================
+Function Definition
+==================
+
+function foo(x) = x
+
+---
+
+(source_file
+  (def
+    (def_aux
+      (fun_def
+        (funcls
+          (id
+            (identifier))
+          (funcl_patexp_typ
+            (pat
+              (pat1
+                (atomic_pat
+                  (pat
+                    (pat1
+                      (atomic_pat
+                        (id
+                          (identifier))))))))
+            (exp
+              (exp0
+                (atomic_exp
+                  (id
+                    (identifier)))))))))))
+
+==================
+Let Definition
+==================
+
+let y : int = 1
+
+---
+
+(source_file
+  (def
+    (def_aux
+      (let_def
+        (letbind
+          (pat
+            (pat1
+              (atomic_pat
+                (atomic_pat
+                  (id
+                    (identifier)))
+                (typ_no_caret
+                  (postfix_typ
+                    (atomic_typ
+                      (id
+                        (identifier))))))))
+          (exp
+            (exp0
+              (atomic_exp
+                (lit
+                  (number))))))))))
+
+==================
+Mapping Definition
+==================
+
+mapping bar = {x => x}
+
+---
+
+(source_file
+  (def
+    (def_aux
+      (map_def
+        (id
+          (identifier))
+        (mapcl_list
+          (mapcl
+            (mapcl0
+              (mpexp
+                (mpat
+                  (atomic_mpat
+                    (id
+                      (identifier)))))
+              (exp
+                (exp0
+                  (atomic_exp
+                    (id
+                      (identifier))))))))))))
+
+==================
+Register Definition
+==================
+
+register r : int = 0
+
+---
+
+(source_file
+  (def
+    (def_aux
+      (register_def
+        (id
+          (identifier))
+        (typ
+          (infix_typ
+            (postfix_typ
+              (atomic_typ
+                (id
+                  (identifier))))))
+        (exp
+          (exp0
+            (atomic_exp
+              (lit
+                (number)))))))))

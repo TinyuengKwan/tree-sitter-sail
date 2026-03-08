@@ -1,9 +1,9 @@
 package tree_sitter_sail
 
-// #cgo CFLAGS: -I../../grammars/sail/src -std=c11 -fPIC
-// #include "../../grammars/sail/src/parser.c"
-// #if __has_include("../../grammars/sail/src/scanner.c")
-// #include "../../grammars/sail/src/scanner.c"
+// #cgo CFLAGS: -I../../src -std=c11 -fPIC
+// #include "../../src/parser.c"
+// #if __has_include("../../src/scanner.c")
+// #include "../../src/scanner.c"
 // #endif
 import "C"
 

@@ -3,9 +3,9 @@
 import Foundation
 import PackageDescription
 
-var sources = ["grammars/sail/src/parser.c"]
-if FileManager.default.fileExists(atPath: "grammars/sail/src/scanner.c") {
-    sources.append("grammars/sail/src/scanner.c")
+var sources = ["src/parser.c"]
+if FileManager.default.fileExists(atPath: "src/scanner.c") {
+    sources.append("src/scanner.c")
 }
 
 let package = Package(
@@ -26,7 +26,7 @@ let package = Package(
                 .copy("queries")
             ],
             publicHeadersPath: "bindings/swift",
-            cSettings: [.headerSearchPath("grammars/sail/src")]
+            cSettings: [.headerSearchPath("src")]
         ),
         .testTarget(
             name: "TreeSitterSailTests",

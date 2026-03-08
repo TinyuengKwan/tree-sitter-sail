@@ -1,0 +1,20 @@
+==================
+Type Definition
+==================
+
+type x = int
+
+---
+
+(source_file
+  (def
+    (def_aux
+      (type_def
+        (id
+          (identifier))
+        (typ
+          (infix_typ
+            (postfix_typ
+              (atomic_typ
+                (id
+                  (identifier))))))))))

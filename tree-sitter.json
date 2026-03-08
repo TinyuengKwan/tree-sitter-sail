@@ -5,12 +5,13 @@
       "name": "sail",
       "camelcase": "Sail",
       "scope": "source.sail",
-      "path": "grammars/sail",
+      "path": ".",
       "file-types": [
         "sail"
       ],
       "injection-regex": "^sail$",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm"
     }
   ],
   "metadata": {
@@ -25,7 +26,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/GZGavinZhao/tree-sitter-sail"
+      "repository": "https://github.com/TinyuengKwan/tree-sitter-sail"
     }
   },
   "bindings": {

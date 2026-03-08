@@ -9,10 +9,10 @@ from wheel.bdist_wheel import bdist_wheel
 
 sources = [
     "bindings/python/tree_sitter_sail/binding.c",
-    "grammars/sail/src/parser.c",
+    "src/parser.c",
 ]
-if path.exists("grammars/sail/src/scanner.c"):
-    sources.append("grammars/sail/src/scanner.c")
+if path.exists("src/scanner.c"):
+    sources.append("src/scanner.c")
 
 macros: list[tuple[str, str | None]] = [
     ("PY_SSIZE_T_CLEAN", None),
@@ -47,7 +47,7 @@ class EggInfo(egg_info):
     def find_sources(self):
         super().find_sources()
         self.filelist.recursive_include("queries", "*.scm")
-        self.filelist.include("grammars/sail/src/tree_sitter/*.h")
+        self.filelist.include("src/tree_sitter/*.h")
 
 
 setup(
@@ -64,7 +64,7 @@ setup(
             sources=sources,
             extra_compile_args=cflags,
             define_macros=macros,
-            include_dirs=["grammars/sail/src"],
+            include_dirs=["src"],
             py_limited_api=limited_api,
         )
     ],
